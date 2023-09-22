@@ -84,6 +84,7 @@ Pada soal ini, kami diminta untuk menganalisis file packet yang diberikan untuk 
 ![5-filter.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-filter.jpg)</br>
 Lalu, untuk menemukan petunjuk kami mencarinya dengan menganalisa dengan TCP stream. Setelah menganalisa, ditemukan petunjuk berupa password sebagai berikut
 ![5-password.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-password.jpg)</br>
+Akan tetapi, password yang kita dapat berbentuk base64 sehingga kita harus mendecodenya terlebih dahulu. Setelah didecode didapat password yaitu `5implePas5word`. password ini kita gunakan untuk membuka file zip.
 Setelah membuka file zip didapat petunjuk lain sebagai berikut
 ![5-zip.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-zip.jpg)</br>
 Di petunjuk tersebut berisi beberapa pertanyaan, yang pertama adalah berapa banyak paket yang tercapture pada file pcap. Untuk menjawab pertanyaan, kami melihat indikator packet yang tertangkap di pojok sebelah kanan yang menunjukkan bahwa ada 60 paket yang tercapture. Lalu, ditanya port berapakah pada server yang digunakan untuk service SMTP. Jawabannya adalah port 25, hal ini bisa kita lihat di keterangan TCP pada packet. Kemudian kami diminta untuk menentukan public IP yang ada dari semua alamat IP. Karena hanya ada dua alamat IP yaitu 10.10.1.4 dan 74.53.140.153, jawabannya adalah 74.53.140.153. Hal ini dikarenakan alamat IP 10.10.1.4 masuk dalam range private ip address yaitu  10.0.0.0 to 10.255.255.255.
