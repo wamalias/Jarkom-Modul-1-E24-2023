@@ -49,7 +49,9 @@ a) Berapa banyak paket yang tercapture dengan IP source maupun destination addre
 b) Protokol layer transport apa yang digunakan?
 
 ### Penyelesaian
-Pada nomor 3, kami diminta untuk menghitung banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702 lalu kami juga diminta untuk menentukan protokol layer transport yang digunakan pada jaringan. Untuk mengerjakann soal ini kami menerapkan filter `ip.src == 239.255.255.250 or ip.dst == 239.255.255.250 && udp.port == 3702` Hal ini agar kita dapat mengetahui jumlah paket di ip source maupun destination address tersebut dengan port 3702. Setelah menerapkan filter tersebut, kita dapat mengetahui jumlah paket yang tercapture sebanyak 21 dan untuk protokol layer transport yang digunakan pada jaringan adalah protokol UDP, dapat dilihat pada keterangan protokol.
+Pada nomor 3, kami diminta untuk menghitung banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702 lalu kami juga diminta untuk menentukan protokol layer transport yang digunakan pada jaringan. Untuk mengerjakann soal ini kami menerapkan filter `ip.src == 239.255.255.250 or ip.dst == 239.255.255.250 && udp.port == 3702`
+![3-filter.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/3-filter.jpg)</br>
+Hal ini agar kita dapat mengetahui jumlah paket di ip source maupun destination address tersebut dengan port 3702. Setelah menerapkan filter tersebut, kita dapat mengetahui jumlah paket yang tercapture sebanyak 21 dan untuk protokol layer transport yang digunakan pada jaringan adalah protokol UDP, dapat dilihat pada keterangan protokol.
 Berikut flag yang kami dapatkan dari soal nomor 3 ini
 ### Kendala yang dialami
 ## Soal 4
