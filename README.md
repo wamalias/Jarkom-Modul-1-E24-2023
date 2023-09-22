@@ -52,8 +52,12 @@ b) Protokol layer transport apa yang digunakan?
 Pada nomor 3, kami diminta untuk menghitung banyak paket yang tercapture dengan IP source maupun destination address adalah 239.255.255.250 dengan port 3702 lalu kami juga diminta untuk menentukan protokol layer transport yang digunakan pada jaringan. Untuk mengerjakann soal ini kami menerapkan filter `ip.src == 239.255.255.250 or ip.dst == 239.255.255.250 && udp.port == 3702`
 ![3-filter.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/3-filter.jpg)</br>
 Hal ini agar kita dapat mengetahui jumlah paket di ip source maupun destination address tersebut dengan port 3702. Setelah menerapkan filter tersebut, kita dapat mengetahui jumlah paket yang tercapture sebanyak 21 dan untuk protokol layer transport yang digunakan pada jaringan adalah protokol UDP, dapat dilihat pada keterangan protokol.
+![3-jumlahpaket.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/3-jumlahpaket.jpg)</br>
 Berikut flag yang kami dapatkan dari soal nomor 3 ini
+![3-flag.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/3-flag.jpg)</br>
+
 ### Kendala yang dialami
+Untuk soal ini, kami merasa tidak mengalami kendala berarti
 ## Soal 4
 ### Pertanyaan
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
@@ -76,7 +80,19 @@ b) Port berapakah pada server yang digunakan untuk service SMTP?</br>
 c) Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?
 
 ### Penyelesaian
+Pada soal ini, kami diminta untuk menganalisis file packet yang diberikan untuk membuka file zip yang disediakan. Pertama-tama kami memfilter file packet agar hanya menampilkan file `smtp` agar kami dapat menemukan petunjuk untuk membuka file zip
+![5-filter.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-filter.jpg)</br>
+Lalu, untuk menemukan petunjuk kami mencarinya dengan menganalisa dengan TCP stream. Setelah menganalisa, ditemukan petunjuk berupa password sebagai berikut
+![5-password.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-password.jpg)</br>
+Setelah membuka file zip didapat petunjuk lain sebagai berikut
+![5-zip.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-zip.jpg)</br>
+Di petunjuk tersebut berisi beberapa pertanyaan, yang pertama adalah berapa banyak paket yang tercapture pada file pcap. Untuk menjawab pertanyaan, kami melihat indikator packet yang tertangkap di pojok sebelah kanan yang menunjukkan bahwa ada 60 paket yang tercapture. Lalu, ditanya port berapakah pada server yang digunakan untuk service SMTP. Jawabannya adalah port 25, hal ini bisa kita lihat di keterangan TCP pada packet. Kemudian kami diminta untuk menentukan public IP yang ada dari semua alamat IP. Karena hanya ada dua alamat IP yaitu 10.10.1.4 dan 74.53.140.153, jawabannya adalah 74.53.140.153. Hal ini dikarenakan alamat IP 10.10.1.4 masuk dalam range private ip address yaitu  10.0.0.0 to 10.255.255.255.
+Setelah menjawab pertanyaan-pertanyaan didapat flag sebagai berikut:
+![5-flag.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/5-flag.jpg)</br>
+
 ### Kendala yang dialami
+Terdapat kendala dalam mencari password pada file capture, akan tetapi setelah beberapa lama kami dapat menemukan passwordnya.
+
 ## Soal 6
 ### Pertanyaan
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
@@ -106,10 +122,23 @@ Pada awalnya saya mengira ada space (spasi) antara dst dan port, sehingga bebera
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
 
 ### Penyelesaian
+Pada soal nomor 9, kami hanya diminta untuk memberikan kueri filter untuk mendapatkan paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34. Untuk mendapatkan paket tersebut kami menggunakan kueri sebagai berikut `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34`. Sehingga didapatkan flag sebagai berikut </br>
+![9-flag.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/9-flag.jpg)</br>
+
 ### Kendala yang dialami
+Untuk nomor ini, kami tidak mengalami kendala
+
 ## Soal 10
 ### Pertanyaan
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet
 
 ### Penyelesaian
+Pada nomor ini, kami diminta untuk mencoba mencari kredensial ketika user mencoba login menggunakan Telnet. Jadi, untuk mempermudah pencarian kami menerapkan filter agar wireshark hanya menampilkan packet dengan protokol telnet.
+![10-filter.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/10-filter.jpg)</br>
+Lalu, untuk menemukan kredensialnya kami mencoba satu persatu kredensial yang tersedia pada packet-packet tersebut. Setelah beberapa percobaan, akhirnya kami menemukan kredensial yang tepat yaitu sebagai berikut
+![10-kredensial.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/10-kredensial.jpg)</br>
+dan berikut flag yang kami dapat di nomor 10
+![10-flag.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/10-flag.jpg)</br>
+
 ### Kendala yang dialami
+saya mencari kredensial dengan mengecek packet telnet satu per satu dan mecoba beberapa kredensial yang saya kira memungkinkan sehingga berkali-kali salah
