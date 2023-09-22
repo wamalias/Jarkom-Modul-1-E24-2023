@@ -110,7 +110,7 @@ Untuk mendapatkan packet yang menuju IP 184.87.193.88, kami menggunakan display 
 </br>
 Dari sini dapat dilihat bahwa jumlah packet yang menuju IP 184.87.193.88 ada 6, sehingga didapatkan flagnya.
 ![7-flag.jpg](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/7-flag.jpg)</br>
-## Kendala yang dialami
+### Kendala yang dialami
 Untuk persoalan ini, kami tidak mengalami kendala berarti saat mengerjakannya.
 ## Soal 8
 ### Pertanyaan
