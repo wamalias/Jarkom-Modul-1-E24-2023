@@ -94,12 +94,24 @@ Setelah menjawab pertanyaan-pertanyaan didapat flag sebagai berikut:
 ### Kendala yang dialami
 Terdapat kendala dalam mencari password pada file capture, akan tetapi setelah beberapa lama kami dapat menemukan passwordnya.
 
-## Soal 6
+## Soal 6 (Revisi)
 ### Pertanyaan
 Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
 
 ### Penyelesaian
+Untuk soal ini, hal yang perlu dilakukan adalah mengecek source address dari paket nomor 7812 lalu dilakukan pengkodean menurut aturan a1 e5 u21. Alamat IP dari source address paket tersebut adalah 104.18.14.101. </br>
+![6](https://github.com/wamalias/Jarkom-Modul-1-E24-2023/raw/main/image/6.png)</br>
+Lalu pengkodeannya adalah sebagai berikut</br>
+10 = J </br>
+4 = D </br>
+18 = R </br>
+14 = N </br>
+10 = J </br>
+1 = A</br>
+Jadi, hasilnya adalah JDRNJA
+
 ### Kendala yang dialami
+Kami kesulitan memahami maksud dari soal ynag diberikan
 ## Soal 7
 ### Pertanyaan
 Berapa jumlah packet yang menuju IP 184.87.193.88?
